@@ -74,6 +74,20 @@ powerful ecosystem for testing and deploying autonomous vehicle algorithms.
 
      Working on this project has been an invaluable experience, allowing me to  gain lots of hands-on  experience with cutting-edge 
 technologies and develop a deeper understanding of the complexities involved in real-world robotics research and development.
+
+
+At the Robotics Research Centre, IIIT Hyderabad, our team built a real-time autonomous navigation pipeline on AutoDP — an in-house platform designed to seamlessly bridge AD research and deployment across both simulation and physical vehicles.
+The Problem
+Testing autonomous driving algorithms typically requires either expensive commercial platforms or starting from scratch each time. AutoDP solves this by providing a modular stack where any navigation or perception algorithm can be plugged in within minutes — on a real car or in CARLA simulation.
+What We Built: We mapped the IIIT Hyderabad campus as a 3D point cloud using LiDAR, forming the base map for all navigation and localization. On top of this we built a full point-to-point navigation pipeline capable of:
+
+Perception -> Localization -> Global Planning -> Local Planning -> Control  
+
+The sensor suite on the vehicle included a 3D LiDAR, monocular and stereo cameras, and CAN bus for actuation. All modules ran within the ROS ecosystem, with LOAM handling LiDAR odometry.
+My Role: My work spanned the full pipeline — from setting up the ROS-based integration of individual modules to end-to-end testing on the physical vehicle. This included tuning, debugging across the stack, and validating behaviour in both CARLA simulation and real-world runs.
+The Result: The system successfully demonstrated fully autonomous point-to-point navigation across the IIIT Hyderabad campus at up to 15 km/h, handling real-world conditions including varying road surfaces.
+
+
 							</pre>
 
 							<pre>

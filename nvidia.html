@@ -50,16 +50,22 @@
 							</pre>
 
 							<pre>
-    During the summer of 2024, I had the privilege of interning at NVIDIA as a  Hardware ASIC Intern within the  CPU team. My primary 
-focus was on automated code generation for UVM Flags.
+ 
+In the summer of 2024, I interned at NVIDIA as a Hardware ASIC Intern within the CPU verification team, working on UVM-based verification infrastructure for a CHI-based protocol.
+The Problem:
+	The existing VIP (Verification IP) lacked flag-level control over sub-fields within transactions. Adding this manually — writing the SystemVerilog flag logic, the control code, and the verification tests for each sub-field — was a hours-long process per flag set, and error-prone at scale.
+What I Built:
+	I developed a Python-based automation tool that took a spec file containing field and sub-field definitions as input and automatically generated three things:
+		1. The UVM flag definitions for each sub-field in the transaction
+		2. The control logic in SystemVerilog to govern flag behaviour
+		3. The back-to-back verification test code to exhaustively validate flag functionality
 
-    I have generated UVM flags for sub-fields in transactions of an existing  VIP and generated the control logic based on the  newly 
-added sub-field flags. I have also perfomed  exhaustive verification of the functionality of the sub-field flags through Back-to-Back
-testing. I am proud to report that these tests achieved a 100% success rate, demonstrating the reliability and accuracy of the addit-
-ions. I have fully automated the UVM flag generation, control-logic generation and Back-to-Back verification generation using Python.
+	The entire workflow — from spec to verified, production-ready SystemVerilog — was fully automated end-to-end.
+The Result: 
+	The generated flags achieved a 100% pass rate across exhaustive back-to-back testing with zero failures. What previously took hours per flag set was reduced to a script execution. The additions were integrated into the existing VIP and validated within the 2-month internship window.
 
 Thanks to this internship, I gained hands-on experience with code automation and verification. I have also  gained experience working
-in an industry setting, collaborating with colleagues, working with tight deadlines, efficient communication and presentation skills.  
+in an industry setting, collaborating with colleagues, working with tight deadlines, efficient communication and presentation skills. 
 							</pre>
 
 						</div>
