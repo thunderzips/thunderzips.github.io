@@ -11,6 +11,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Fix pre tag overflow — keeps line breaks but wraps long lines */
+			pre {
+				white-space: pre-wrap;       /* wrap lines instead of overflowing */
+				word-wrap: break-word;       /* break very long words if needed */
+				overflow-x: hidden;          /* no horizontal scrollbar */
+				font-family: inherit;        /* use page font, not monospace */
+				font-size: inherit;          /* match surrounding text size */
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
