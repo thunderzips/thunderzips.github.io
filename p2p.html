@@ -1,3 +1,75 @@
+
+
+<!DOCTYPE HTML> <!-- Hyperspace by HTML5 UP html5up.net | @ajlkn Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) --> <html> <head> <title>Sarat Chandra: NVIDIA</title> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width,
+
+pasted
+
+for my portfolio page, this is the .html file I have
+
+However, on loading via github.io it is visually not appealing (screenshot) as lines are going out of scope and need to use slider to read them. 
+
+Fix this without chantging the content of the portfoio
+
+3:48 PM
+
+Diagnosed text overflow issue and devised CSS styling solution
+Diagnosed text overflow issue and devised CSS styling solution
+The culprit is the <pre> tag — it's designed to preserve whitespace exactly as written, which means it refuses to wrap lines like a stubborn intern who won't adapt. The fix is to add a small CSS override.
+
+Add this inside the <head> section, right before the closing </head> tag:
+
+
+Identified overflow issue and devised CSS-based wrapping solution
+Identified overflow issue and devised CSS-based wrapping solution
+Yep, confirmed — the text is spilling out like an uncontrolled wire harness. The <pre> tags are designed for code blocks (fixed-width, no wrapping), but you're using them for regular prose. Two issues to fix:
+
+white-space: pre-wrap — lets lines wrap instead of running off-screen
+font-family: inherit — replaces the monospace code font with the page's actual font
+Here's the corrected file:
+
+
+Created a file, read a file
+Created a file, read a file
+Only change made: A small <style> block added inside <head>. Zero content touched.
+
+The 3 CSS properties doing the heavy lifting:
+
+Property	What it fixes
+white-space: pre-wrap	Wraps long lines instead of running off-screen
+word-wrap: break-word	Breaks any single word that's still too long
+font-family: inherit	Drops the monospace courier look, uses your page's font instead
+Drop this file into your repo replacing the old one and push — should render cleanly on GitHub Pages immediately.
+
+One unsolicited suggestion: Since you're using <pre> purely for layout/prose (not actual code), consider replacing them with <p> tags in the future. It's semantically cleaner and you'd never need this workaround. Your current fix is solid though.
+
+Nvidia
+Code · HTML 
+
+<!DOCTYPE HTML> <!-- Hyperspace by HTML5 UP html5up.net | @ajlkn Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) --> <html> <head> <title>Sarat Chandra: P2P </title> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, i
+
+pasted
+
+do the same for this file too
+
+3:51 PM
+
+Replicated previous solution across alternative file
+Replicated previous solution across alternative file
+Done — exact same 5-line CSS fix added to <head>, zero content changed. Push and you're good.
+
+If you have more pages with this same <pre> issue, the smarter long-term move would be to add those 5 CSS lines to your shared assets/css/main.css once — and it'll fix every page automatically without touching each HTML file individually.
+
+P2p
+Code · HTML 
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+P2p · HTML
+Copy
+
 <!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
@@ -11,9 +83,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Fix pre tag overflow — keeps line breaks but wraps long lines */
+			pre {
+				white-space: pre-wrap;       /* wrap lines instead of overflowing */
+				word-wrap: break-word;       /* break very long words if needed */
+				overflow-x: hidden;          /* no horizontal scrollbar */
+				font-family: inherit;        /* use page font, not monospace */
+				font-size: inherit;          /* match surrounding text size */
+			}
+		</style>
 	</head>
 	<body class="is-preload">
-
+ 
 		<!-- Header -->
 			<!-- <header id="header">
 				<a href="index.html" class="title">My Portfolio</a>
@@ -26,10 +108,10 @@
 			</header> -->
         
             
-
+ 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
+ 
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
@@ -39,8 +121,8 @@
 							<pre>
 					Demo run of point-to-point navigation on AutoDP
 							</pre>
-
-
+ 
+ 
 							<div class="row">
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -50,10 +132,10 @@
 									</ul>
 								</div>
 							</div>
-
+ 
 							<!-- <p> Collaborated with my team-mates at Robotics Research Center of IIITH to build an autonomous driving platform for seamlessly integrating -->
 								<!-- various algorithms in real vehicles and simulations.</p> -->
-							<!-- <p> We have set-up a fully functioning pipeline that let’s -->
+							<!-- <p> We have set-up a fully functioning pipeline that let's -->
 								<!-- us perform Point-to-point navigation, re-localisation, -->
 								<!-- etc on a vehicle in real-time. For this, we have mapped the 3D model of our campus as a laser p/oint cloud.</p> -->
 							<!-- <p> I got exposed to various tools and technologies like ROS, LOAM, CAN, OSM, CARLA, etc..</p> -->
@@ -61,33 +143,33 @@
 							<!-- <p>As part of the Robotics Research Center at IIITH, I contributed to the development of AutoDP, a platform designed to bridge the gap between autonomous vehicle research and deployment, both in simulation and real-world. This let's us seamlessy integrate multiple autonomous driving modules in a minute amout of time.  -->
 							<!-- Our team also successfully established a real-time pipeline for point-to-point navigation and re-localization. By mapping our campus as a 3D point cloud and integrating tools and technologies such as ROS, LOAM, CAN, OSM, and CARLA, we've created a powerful ecosystem for testing and deploying autonomous vehicle algorithms.</p> -->
 							<!-- <p>Working on this project has been an invaluable experience, allowing me to gain hands-on experience with cutting-edge technologies and develop a deeper understanding of the complexities involved in real-world robotics research and development.</p> -->
-
+ 
 							<pre>
-
-
+ 
+ 
      At Robotics Research Center @ IIITH, I contributed to the development of AutoDP, a platform designed to bridge the gap between 
 autonomous vehicle research and deployment, both in simulation and real-world. This lets us seamlessy integrate multiple autonomous 
 driving modules in a minute amout of time.
  Our team successfully established a real-time pipeline for point-to-point navigation and re-localization. By mapping our campus as 
 a 3D point cloud and integrating tools and technologies such as ROS,  LOAM,  CAN,  OSM,  and CARLA for simulations, we've created a 
 powerful ecosystem for testing and deploying autonomous vehicle algorithms.
-
+ 
      Working on this project has been an invaluable experience, allowing me to  gain lots of hands-on  experience with cutting-edge 
 technologies and develop a deeper understanding of the complexities involved in real-world robotics research and development.
-
-
+ 
+ 
 At the Robotics Research Centre, IIIT Hyderabad, our team built a real-time autonomous navigation pipeline on AutoDP — an in-house platform designed to seamlessly bridge AD research and deployment across both simulation and physical vehicles.
 The Problem
 Testing autonomous driving algorithms typically requires either expensive commercial platforms or starting from scratch each time. AutoDP solves this by providing a modular stack where any navigation or perception algorithm can be plugged in within minutes — on a real car or in CARLA simulation.
 What We Built: We mapped the IIIT Hyderabad campus as a 3D point cloud using LiDAR, forming the base map for all navigation and localization. On top of this we built a full point-to-point navigation pipeline capable of:
-
+ 
 Perception -> Localization -> Global Planning -> Local Planning -> Control  
-
+ 
 The sensor suite on the vehicle included a 3D LiDAR, monocular and stereo cameras, and CAN bus for actuation. All modules ran within the ROS ecosystem, with LOAM handling LiDAR odometry.
 My Role: My work spanned the full pipeline — from setting up the ROS-based integration of individual modules to end-to-end testing on the physical vehicle. This included tuning, debugging across the stack, and validating behaviour in both CARLA simulation and real-world runs.
 The Result: The system successfully demonstrated fully autonomous point-to-point navigation across the IIIT Hyderabad campus at up to 15 km/h, handling real-world conditions including varying road surfaces.
-
-
+ 
+ 
 							</pre>
 
 					<pre>
@@ -98,11 +180,11 @@ The Result: The system successfully demonstrated fully autonomous point-to-point
 														<!-- <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p> -->
 						</div>
 					</section>
-
+ 
 			</div>
 			Y Sarat Chandra
-
-
+ 
+ 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
@@ -111,7 +193,7 @@ The Result: The system successfully demonstrated fully autonomous point-to-point
 					</ul>
 				</div>
 			</footer>
-
+ 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -120,6 +202,11 @@ The Result: The system successfully demonstrated fully autonomous point-to-point
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+ 
 	</body>
 </html>
+ 
+
+
+
+
